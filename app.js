@@ -353,9 +353,8 @@ const feedData = {
 const state = {
   category: "All",
   source: "All",
-  date: "All",
   query: "",
-  selectedId: feedData.items[0]?.id
+  activeDate: ""
 };
 
 const visibleCategories = ["Official", "Tweets"];
@@ -377,9 +376,7 @@ const els = {
   categoryFilters: document.querySelector("#categoryFilters"),
   sourceFilters: document.querySelector("#sourceFilters"),
   visibleCount: document.querySelector("#visibleCount"),
-  feed: document.querySelector("#feed"),
-  detailPanel: document.querySelector(".detail-panel"),
-  detail: document.querySelector("#detail")
+  feed: document.querySelector("#feed")
 };
 
 function formatDate(value) {
@@ -392,7 +389,6 @@ function getFilteredItems() {
     .filter((item) => visibleCategories.includes(item.category))
     .filter((item) => state.category === "All" || item.category === state.category)
     .filter((item) => state.source === "All" || item.source === state.source)
-    .filter((item) => state.date === "All" || item.date === state.date)
     .filter((item) => {
       if (!query) return true;
       return [item.title, item.summary, item.source, item.category, item.tags.join(" ")]
@@ -449,10 +445,7 @@ function renderCategoryFilters() {
   const visibleItems = feedData.items.filter((item) => visibleCategories.includes(item.category));
   els.categoryFilters.innerHTML = categoryOrder
     .map((category) => {
-      const count = category === "All"
-        ? visibleItems.length
-        : visibleItems.filter((item) => item.category === category).length;
-      return `<button class="filter-button ${state.category === category ? "active" : ""}" data-category="${category}" type="button">${category} ${count}</button>`;
+      return `<button class="filter-button ${state.category === category ? "active" : ""}" data-category="${category}" type="button">${category}</button>`;
     })
     .join("");
 
@@ -479,20 +472,26 @@ function renderSourceFilters() {
 }
 
 function renderDates() {
-  const visibleItems = feedData.items.filter((item) => visibleCategories.includes(item.category));
+  const visibleItems = getFilteredItems();
   const dates = [...new Set(visibleItems.map((item) => item.date).sort().reverse())];
+  if (!state.activeDate || !dates.includes(state.activeDate)) {
+    state.activeDate = dates[0] || "";
+  }
   els.dateList.innerHTML = dates
     .map((date) => {
-      const count = visibleItems.filter((item) => item.date === date).length;
-      const label = formatDate(date);
-      return `<button class="date-button ${state.date === date ? "active" : ""}" data-date="${date}" type="button"><span>${label}</span><strong>${count}</strong></button>`;
+      const label = date === todayKey ? "Today" : formatDate(date).slice(5);
+      return `<button class="date-node ${state.activeDate === date ? "active" : ""}" data-date="${date}" type="button"><span>${label}</span></button>`;
     })
     .join("");
 
   els.dateList.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", () => {
-      state.date = button.dataset.date;
-      render();
+      state.activeDate = button.dataset.date;
+      syncActiveDate();
+      document.querySelector(`[data-section-date="${state.activeDate}"]`)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     });
   });
 }
@@ -507,89 +506,62 @@ function renderFeed(items) {
   const groups = groupedByDate(items);
   els.feed.innerHTML = Object.entries(groups)
     .map(([date, groupItems]) => `
-      <section class="day-group">
-        <div class="day-title">
-          <span>${formatDate(date)}</span>
-          <strong>${groupItems.length}</strong>
+      <section class="date-section" data-section-date="${date}">
+        <div class="date-section-heading">
+          <span>${date === todayKey ? "Today" : formatDate(date).slice(5)}</span>
+          <i aria-hidden="true"></i>
         </div>
-        <div class="day-cards">${groupItems.map(renderCard).join("")}</div>
+        <div class="event-grid">${groupItems.map(renderCard).join("")}</div>
       </section>
     `)
     .join("");
-
-  els.feed.querySelectorAll(".feed-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      state.selectedId = card.dataset.id;
-      renderDetail();
-      els.feed.querySelectorAll(".feed-card").forEach((node) => node.classList.toggle("active", node.dataset.id === state.selectedId));
-    });
-  });
 }
 
 function renderCard(item) {
+  const isTweet = item.category === "Tweets";
+  const resourceLabel = isTweet ? "X post" : "Official";
+  const resourceIcon = isTweet ? "X" : "O";
   return `
-    <article class="feed-card ${item.id === state.selectedId ? "active" : ""}" data-id="${item.id}" data-category="${item.category}">
-      <div class="card-body">
-        <div class="meta-row">
-          <span class="pill ${item.category === "Tweets" ? "tweet-pill" : "official-pill"}"><span class="tag-icon" aria-hidden="true">${item.category === "Tweets" ? "X" : "A"}</span>${item.category}</span>
-          <span class="source">${item.source}</span>
-        </div>
-        <h4>${item.title}</h4>
-        <p>${item.summary}</p>
-        <div class="tags">${item.tags.slice(0, 4).map((tag) => `<span class="tag ${item.category === "Tweets" ? "tweet-tag" : "official-tag"}"><span class="tag-dot" aria-hidden="true"></span>${tag}</span>`).join("")}</div>
+    <article class="feed-card" data-id="${item.id}" data-category="${item.category}">
+      <div class="card-topline">
+        <span class="resource-tag ${isTweet ? "tweet-pill" : "official-pill"}"><span class="tag-icon" aria-hidden="true">${resourceIcon}</span>${resourceLabel}</span>
+        <a class="source-button" href="${item.url}" target="_blank" rel="noreferrer">${item.source}</a>
       </div>
+      <h4>${item.title}</h4>
+      <p class="card-summary">${item.summary}</p>
+      <p class="card-impact"><strong>Why it matters:</strong> ${item.impact}</p>
+      <div class="tags">${item.tags.slice(0, 5).map((tag) => `<span class="tag ${isTweet ? "tweet-tag" : "official-tag"}"><span class="tag-dot" aria-hidden="true"></span>${tag}</span>`).join("")}</div>
     </article>
   `;
 }
 
-function getSelectedCard() {
-  return els.feed.querySelector(`.feed-card[data-id="${state.selectedId}"]`);
+function syncActiveDate() {
+  els.dateList.querySelectorAll(".date-node").forEach((node) => {
+    node.classList.toggle("active", node.dataset.date === state.activeDate);
+  });
 }
 
-function positionDetailPanel() {
-  if (!els.detailPanel) return;
-  els.detailPanel.classList.add("visible");
-}
-
-function renderDetail() {
-  const item = feedData.items.find((entry) => entry.id === state.selectedId) || getFilteredItems()[0] || feedData.items[0];
-  if (!item) {
-    els.detail.innerHTML = `<p>No item selected.</p>`;
-    return;
+function updateActiveDateFromScroll() {
+  const sections = [...document.querySelectorAll(".date-section")];
+  const current = sections
+    .map((section) => ({
+      date: section.dataset.sectionDate,
+      distance: Math.abs(section.getBoundingClientRect().top - 180)
+    }))
+    .sort((a, b) => a.distance - b.distance)[0];
+  if (current && current.date !== state.activeDate) {
+    state.activeDate = current.date;
+    syncActiveDate();
   }
-
-  state.selectedId = item.id;
-  els.detail.innerHTML = `
-    <div class="detail-content">
-      <div class="detail-kicker">
-        <div class="detail-meta">
-          <span class="pill">${item.category}</span>
-          <time datetime="${item.date}">${formatDate(item.date)}</time>
-        </div>
-        <a class="detail-link" href="${item.url}" target="_blank" rel="noreferrer">Open source</a>
-      </div>
-      <h3>${item.title}</h3>
-      <p>${item.summary}</p>
-      <ul>
-        <li><strong>Source:</strong> ${item.source}</li>
-        <li><strong>Why it matters:</strong> ${item.impact}</li>
-        <li><strong>Tags:</strong> ${item.tags.join(", ")}</li>
-      </ul>
-    </div>
-  `;
-  requestAnimationFrame(() => positionDetailPanel());
 }
 
 function render() {
   const items = getFilteredItems();
-  if (!items.some((item) => item.id === state.selectedId)) {
-    state.selectedId = items[0]?.id || feedData.items[0]?.id;
-  }
   renderCategoryFilters();
   renderSourceFilters();
   renderDates();
   renderFeed(items);
-  renderDetail();
+  requestAnimationFrame(updateActiveDateFromScroll);
 }
 
 els.searchInput.addEventListener("input", (event) => {
@@ -600,8 +572,8 @@ els.searchInput.addEventListener("input", (event) => {
 els.resetButton.addEventListener("click", () => {
   state.category = "All";
   state.source = "All";
-  state.date = "All";
   state.query = "";
+  state.activeDate = "";
   els.searchInput.value = "";
   render();
 });
@@ -611,5 +583,4 @@ renderRunStatus();
 renderSourceStatus();
 render();
 
-window.addEventListener("resize", () => positionDetailPanel());
-document.addEventListener("scroll", () => positionDetailPanel(), true);
+window.addEventListener("scroll", updateActiveDateFromScroll, { passive: true });
