@@ -1,235 +1,351 @@
 const feedData = {
-  generatedAt: "2026-06-14T16:36:59+09:00",
-  range: "2026-05-15 to 2026-06-14",
-  collector: {
-    skill: "last30days v3.3.2",
-    rawFile: "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
-    note: "The last30days run completed but returned no ranked candidates in this sandbox. Seed items below are verified from official pages and can be replaced with collector output.",
-    coverage: [
-      { source: "Official pages", status: "seeded" },
-      { source: "X/Twitter", status: "authenticated via AUTH_TOKEN/CT0; official posts fetched" }
+  "generatedAt": "2026-06-14T08:42:47.885Z",
+  "range": "2026-06-14 daily refresh",
+  "collector": {
+    "skill": "last30days v3.3.2",
+    "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
+    "note": "Updated by the daily GitHub Actions refresh. Official announcements are fetched automatically; X refresh can be extended with repository secrets.",
+    "coverage": [
+      {
+        "source": "Official pages",
+        "status": "seeded"
+      },
+      {
+        "source": "X/Twitter",
+        "status": "authenticated via AUTH_TOKEN/CT0; official posts fetched"
+      }
     ]
   },
-  items: [
+  "items": [
     {
-      id: "openai-academy-2026-06-12",
-      date: "2026-06-12",
-      category: "Official",
-      source: "OpenAI News",
-      title: "OpenAI Academy adds AI Foundations, Applied AI Foundations, and Agents and Workflows",
-      summary: "OpenAI framed the new courses around moving teams from basic AI fluency to repeatable workflows and agent-assisted work.",
-      url: "https://openai.com/index/academy-courses-applying-ai-at-work/",
-      impact: "Useful for tracking enterprise AI enablement and agent workflow education.",
-      tags: ["OpenAI", "academy", "agents", "workflows"]
+      "id": "youtube-shorts-monitor",
+      "date": "2026-06-14",
+      "category": "Hidden",
+      "source": "Video monitor",
+      "title": "Short-video source slot for AI demos and creator explainers",
+      "summary": "The dashboard includes a short-video category for YouTube Shorts, TikTok, and Instagram Reels once the collector has credentials or imported URLs.",
+      "url": "https://www.youtube.com/results?search_query=AI+tools+demo+shorts",
+      "impact": "Captures demo-led AI trends that do not appear first in official blogs.",
+      "tags": [
+        "YouTube Shorts",
+        "TikTok",
+        "Instagram",
+        "demo"
+      ]
     },
     {
-      id: "anthropic-directive-2026-06-12",
-      date: "2026-06-12",
-      category: "Official",
-      source: "Anthropic News",
-      title: "Anthropic says access to Claude Fable 5 and Mythos 5 is suspended",
-      summary: "Anthropic posted an update saying it was suspending access to Claude Fable 5 and Claude Mythos 5 after a US government directive.",
-      url: "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      impact: "Important policy and availability signal for frontier-model monitoring.",
-      tags: ["Anthropic", "Fable 5", "Mythos 5", "policy"]
+      "id": "auto-anthropic-news-statement-on-the-us-government-directive-to-suspend-access-to-fable-5-and-m",
+      "date": "2026-06-14",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
     },
     {
-      id: "openai-codex-black-holes-2026-06-11",
-      date: "2026-06-11",
-      category: "Hidden",
-      source: "OpenAI News",
-      title: "Codex astrophysics story includes a simulation video of plasma around a black hole",
-      summary: "OpenAI described how Codex helps test algorithms for black-hole simulations, including a short supercomputer-simulation video asset.",
-      url: "https://openai.com/index/using-codex-to-simulate-black-holes/",
-      impact: "Good example of AI-assisted research storytelling with video-friendly scientific visuals.",
-      tags: ["Codex", "science", "simulation", "video"]
+      "id": "auto-anthropic-news-announcements-https-www-anthropic-com-news-expanding-project-glasswing",
+      "date": "2026-06-14",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Announcements",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/expanding-project-glasswing",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
     },
     {
-      id: "anthropic-corps-2026-06-11",
-      date: "2026-06-11",
-      category: "Official",
-      source: "Anthropic News",
-      title: "Anthropic introduces Claude Corps",
-      summary: "Anthropic announced Claude Corps, a national fellowship program for early-career people focused on extending AI benefits to US communities.",
-      url: "https://www.anthropic.com/news",
-      impact: "Tracks AI adoption programs beyond pure model releases.",
-      tags: ["Anthropic", "education", "community"]
+      "id": "auto-anthropic-news-announcements-https-www-anthropic-com-news-claude-corps",
+      "date": "2026-06-14",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Announcements",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/claude-corps",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
     },
     {
-      id: "openai-oracle-2026-06-10",
-      date: "2026-06-10",
-      category: "Official",
-      source: "OpenAI News",
-      title: "OpenAI models and Codex will be accessible through Oracle Cloud commitments",
-      summary: "OpenAI and Oracle announced a path for OCI customers to use existing Oracle Universal Credits for OpenAI models and Codex.",
-      url: "https://openai.com/index/openai-on-oracle-cloud/",
-      impact: "Enterprise procurement and deployment channel for OpenAI APIs and Codex.",
-      tags: ["OpenAI", "Codex", "Oracle", "cloud"]
+      "id": "auto-anthropic-news-announcements-https-www-anthropic-com-news-chris-olah-pope-leo-encyclical",
+      "date": "2026-06-14",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Announcements",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
     },
     {
-      id: "anthropic-fable-mythos-2026-06-09",
-      date: "2026-06-09",
-      category: "Official",
-      source: "Anthropic News",
-      title: "Anthropic launches Claude Fable 5 and Claude Mythos 5",
-      summary: "Anthropic described Fable 5 as a Mythos-class model made safe for general use, with Mythos 5 initially available through Project Glasswing.",
-      url: "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      impact: "Major frontier-model launch covering coding, knowledge work, vision, memory, and cyberdefense access.",
-      tags: ["Anthropic", "model launch", "cybersecurity", "vision"]
+      "id": "tweet-anthropic-directive-2026-06-13",
+      "date": "2026-06-13",
+      "category": "Tweets",
+      "source": "@AnthropicAI",
+      "title": "Anthropic posts export-control directive update",
+      "summary": "Anthropic said the US government issued a national-security directive suspending foreign-national access to Fable 5 and Mythos 5.",
+      "url": "https://x.com/AnthropicAI/status/2065597531644743999",
+      "impact": "Fast social confirmation of a major model-access and policy change.",
+      "tags": [
+        "X",
+        "Anthropic",
+        "Fable 5",
+        "Mythos 5",
+        "policy"
+      ]
     },
     {
-      id: "openai-research-exchange-2026-06-08",
-      date: "2026-06-08",
-      category: "Official",
-      source: "OpenAI News",
-      title: "OpenAI announces the Economic Research Exchange",
-      summary: "OpenAI listed a new Economic Research Exchange on its news page as part of its company updates.",
-      url: "https://openai.com/news/",
-      impact: "Relevant for tracking AI labor-market, productivity, and economic-impact research.",
-      tags: ["OpenAI", "economics", "research"]
+      "id": "tweet-openaidevs-docs-agent-2026-06-12",
+      "date": "2026-06-12",
+      "category": "Tweets",
+      "source": "@OpenAIDevs",
+      "title": "OpenAI Devs introduces a docs agent",
+      "summary": "The OpenAI developer account said the new docs agent helps users find answers about OpenAI products and jump to relevant documentation.",
+      "url": "https://x.com/OpenAIDevs/status/2065507724704858173",
+      "impact": "Adds a developer-support surface that can feed directly into coding-agent workflows.",
+      "tags": [
+        "X",
+        "OpenAI",
+        "docs",
+        "developer tools"
+      ]
     },
     {
-      id: "openai-memory-2026-06-04",
-      date: "2026-06-04",
-      category: "Official",
-      source: "OpenAI News",
-      title: "OpenAI publishes research on better memory for a more helpful ChatGPT",
-      summary: "OpenAI listed a research item titled Dreaming: Better memory for a more helpful ChatGPT.",
-      url: "https://openai.com/news/",
-      impact: "Useful signal for personal-assistant memory and long-running interaction design.",
-      tags: ["OpenAI", "memory", "ChatGPT"]
+      "id": "tweet-openaidevs-codex-workflow-2026-06-12",
+      "date": "2026-06-12",
+      "category": "Tweets",
+      "source": "@OpenAIDevs",
+      "title": "OpenAI Devs highlights parallel website edits with Codex",
+      "summary": "OpenAI Devs shared a Codex workflow where multiple parts of a website are updated in parallel, compressing a week of work into three days.",
+      "url": "https://x.com/OpenAIDevs/status/2065517012311593114",
+      "impact": "Concrete customer-style proof point for agentic coding productivity.",
+      "tags": [
+        "X",
+        "OpenAI",
+        "Codex",
+        "workflow"
+      ]
     },
     {
-      id: "anthropic-glasswing-2026-06-02",
-      date: "2026-06-02",
-      category: "Official",
-      source: "Anthropic News",
-      title: "Anthropic expands Project Glasswing",
-      summary: "Anthropic said it is extending Project Glasswing to around 150 organizations in more than fifteen countries.",
-      url: "https://www.anthropic.com/news",
-      impact: "Tracks trusted-access deployment of cyber-capable frontier models.",
-      tags: ["Anthropic", "Project Glasswing", "cyberdefense"]
+      "id": "tweet-openai-codex-resets-2026-06-12",
+      "date": "2026-06-12",
+      "category": "Tweets",
+      "source": "@OpenAI",
+      "title": "OpenAI rolls out banked Codex rate-limit resets",
+      "summary": "OpenAI said Go, Plus, Pro, and Business users can save Codex rate-limit resets and use them later.",
+      "url": "https://x.com/OpenAI/status/2065225362544726371",
+      "impact": "Signals product tuning around Codex usage patterns and power-user scheduling.",
+      "tags": [
+        "X",
+        "OpenAI",
+        "Codex",
+        "rate limits"
+      ]
     },
     {
-      id: "anthropic-opus-48-2026-05-28",
-      date: "2026-05-28",
-      category: "Official",
-      source: "Anthropic News",
-      title: "Claude Opus 4.8 launches with dynamic workflows and effort control",
-      summary: "Anthropic announced Opus 4.8, dynamic workflows for Claude Code, effort control, and cheaper fast mode.",
-      url: "https://www.anthropic.com/news/claude-opus-4-8",
-      impact: "Directly relevant to agentic coding, long-running tasks, and developer workflow automation.",
-      tags: ["Claude Code", "Opus 4.8", "agents", "developer tools"]
+      "id": "tweet-openai-codex-invites-2026-06-12",
+      "date": "2026-06-12",
+      "category": "Tweets",
+      "source": "@OpenAI",
+      "title": "OpenAI starts a two-week Codex invite loop",
+      "summary": "Plus and Pro users can invite up to three friends to try Codex, with both sides earning another banked reset after the first Codex message.",
+      "url": "https://x.com/OpenAI/status/2065225374737543376",
+      "impact": "Useful adoption signal for Codex distribution and referral mechanics.",
+      "tags": [
+        "X",
+        "OpenAI",
+        "Codex",
+        "growth"
+      ]
     },
     {
-      id: "tweet-openai-codex-resets-2026-06-12",
-      date: "2026-06-12",
-      category: "Tweets",
-      source: "@OpenAI",
-      title: "OpenAI rolls out banked Codex rate-limit resets",
-      summary: "OpenAI said Go, Plus, Pro, and Business users can save Codex rate-limit resets and use them later.",
-      url: "https://x.com/OpenAI/status/2065225362544726371",
-      impact: "Signals product tuning around Codex usage patterns and power-user scheduling.",
-      tags: ["X", "OpenAI", "Codex", "rate limits"]
+      "id": "tweet-deepmind-robotics-accelerator-2026-06-12",
+      "date": "2026-06-12",
+      "category": "Tweets",
+      "source": "@GoogleDeepMind",
+      "title": "Google DeepMind launches Robotics Accelerator cohort",
+      "summary": "Google DeepMind said its Robotics Accelerator launched with 15 European startups using its AI stack and Gemini Robotics models.",
+      "url": "https://x.com/GoogleDeepMind/status/2065388989146628563",
+      "impact": "Tracks physical-AI adoption and startup access to Gemini Robotics tooling.",
+      "tags": [
+        "X",
+        "Google DeepMind",
+        "robotics",
+        "Gemini"
+      ]
     },
     {
-      id: "tweet-openai-codex-invites-2026-06-12",
-      date: "2026-06-12",
-      category: "Tweets",
-      source: "@OpenAI",
-      title: "OpenAI starts a two-week Codex invite loop",
-      summary: "Plus and Pro users can invite up to three friends to try Codex, with both sides earning another banked reset after the first Codex message.",
-      url: "https://x.com/OpenAI/status/2065225374737543376",
-      impact: "Useful adoption signal for Codex distribution and referral mechanics.",
-      tags: ["X", "OpenAI", "Codex", "growth"]
+      "id": "openai-academy-2026-06-12",
+      "date": "2026-06-12",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "OpenAI Academy adds AI Foundations, Applied AI Foundations, and Agents and Workflows",
+      "summary": "OpenAI framed the new courses around moving teams from basic AI fluency to repeatable workflows and agent-assisted work.",
+      "url": "https://openai.com/index/academy-courses-applying-ai-at-work/",
+      "impact": "Useful for tracking enterprise AI enablement and agent workflow education.",
+      "tags": [
+        "OpenAI",
+        "academy",
+        "agents",
+        "workflows"
+      ]
     },
     {
-      id: "tweet-openaidevs-docs-agent-2026-06-12",
-      date: "2026-06-12",
-      category: "Tweets",
-      source: "@OpenAIDevs",
-      title: "OpenAI Devs introduces a docs agent",
-      summary: "The OpenAI developer account said the new docs agent helps users find answers about OpenAI products and jump to relevant documentation.",
-      url: "https://x.com/OpenAIDevs/status/2065507724704858173",
-      impact: "Adds a developer-support surface that can feed directly into coding-agent workflows.",
-      tags: ["X", "OpenAI", "docs", "developer tools"]
+      "id": "tweet-deepmind-tacticai-palmeiras-2026-06-11",
+      "date": "2026-06-11",
+      "category": "Tweets",
+      "source": "@GoogleDeepMind",
+      "title": "Google DeepMind shares TacticAI work with Palmeiras",
+      "summary": "Google DeepMind said Palmeiras is building on TacticAI to simulate field scenarios and predict open-play dynamics up to eight seconds ahead.",
+      "url": "https://x.com/GoogleDeepMind/status/2065093482088169719",
+      "impact": "Good short-form signal for spatial AI, sports analytics, and robotics-adjacent modeling.",
+      "tags": [
+        "X",
+        "Google DeepMind",
+        "TacticAI",
+        "sports AI"
+      ]
     },
     {
-      id: "tweet-openaidevs-codex-workflow-2026-06-12",
-      date: "2026-06-12",
-      category: "Tweets",
-      source: "@OpenAIDevs",
-      title: "OpenAI Devs highlights parallel website edits with Codex",
-      summary: "OpenAI Devs shared a Codex workflow where multiple parts of a website are updated in parallel, compressing a week of work into three days.",
-      url: "https://x.com/OpenAIDevs/status/2065517012311593114",
-      impact: "Concrete customer-style proof point for agentic coding productivity.",
-      tags: ["X", "OpenAI", "Codex", "workflow"]
+      "id": "tweet-anthropic-claude-corps-2026-06-11",
+      "date": "2026-06-11",
+      "category": "Tweets",
+      "source": "@AnthropicAI",
+      "title": "Anthropic announces Claude Corps on X",
+      "summary": "Anthropic described Claude Corps as a national fellowship teaching 1,000 early-career people to use Claude with US nonprofits.",
+      "url": "https://x.com/AnthropicAI/status/2065057393927467084",
+      "impact": "Shows Claude adoption work moving through fellowships and nonprofit deployment.",
+      "tags": [
+        "X",
+        "Anthropic",
+        "Claude",
+        "fellowship"
+      ]
     },
     {
-      id: "tweet-anthropic-directive-2026-06-13",
-      date: "2026-06-13",
-      category: "Tweets",
-      source: "@AnthropicAI",
-      title: "Anthropic posts export-control directive update",
-      summary: "Anthropic said the US government issued a national-security directive suspending foreign-national access to Fable 5 and Mythos 5.",
-      url: "https://x.com/AnthropicAI/status/2065597531644743999",
-      impact: "Fast social confirmation of a major model-access and policy change.",
-      tags: ["X", "Anthropic", "Fable 5", "Mythos 5", "policy"]
+      "id": "openai-codex-black-holes-2026-06-11",
+      "date": "2026-06-11",
+      "category": "Hidden",
+      "source": "OpenAI News",
+      "title": "Codex astrophysics story includes a simulation video of plasma around a black hole",
+      "summary": "OpenAI described how Codex helps test algorithms for black-hole simulations, including a short supercomputer-simulation video asset.",
+      "url": "https://openai.com/index/using-codex-to-simulate-black-holes/",
+      "impact": "Good example of AI-assisted research storytelling with video-friendly scientific visuals.",
+      "tags": [
+        "Codex",
+        "science",
+        "simulation",
+        "video"
+      ]
     },
     {
-      id: "tweet-anthropic-claude-corps-2026-06-11",
-      date: "2026-06-11",
-      category: "Tweets",
-      source: "@AnthropicAI",
-      title: "Anthropic announces Claude Corps on X",
-      summary: "Anthropic described Claude Corps as a national fellowship teaching 1,000 early-career people to use Claude with US nonprofits.",
-      url: "https://x.com/AnthropicAI/status/2065057393927467084",
-      impact: "Shows Claude adoption work moving through fellowships and nonprofit deployment.",
-      tags: ["X", "Anthropic", "Claude", "fellowship"]
+      "id": "openai-oracle-2026-06-10",
+      "date": "2026-06-10",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "OpenAI models and Codex will be accessible through Oracle Cloud commitments",
+      "summary": "OpenAI and Oracle announced a path for OCI customers to use existing Oracle Universal Credits for OpenAI models and Codex.",
+      "url": "https://openai.com/index/openai-on-oracle-cloud/",
+      "impact": "Enterprise procurement and deployment channel for OpenAI APIs and Codex.",
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "Oracle",
+        "cloud"
+      ]
     },
     {
-      id: "tweet-deepmind-robotics-accelerator-2026-06-12",
-      date: "2026-06-12",
-      category: "Tweets",
-      source: "@GoogleDeepMind",
-      title: "Google DeepMind launches Robotics Accelerator cohort",
-      summary: "Google DeepMind said its Robotics Accelerator launched with 15 European startups using its AI stack and Gemini Robotics models.",
-      url: "https://x.com/GoogleDeepMind/status/2065388989146628563",
-      impact: "Tracks physical-AI adoption and startup access to Gemini Robotics tooling.",
-      tags: ["X", "Google DeepMind", "robotics", "Gemini"]
+      "id": "anthropic-fable-mythos-2026-06-09",
+      "date": "2026-06-09",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Anthropic launches Claude Fable 5 and Claude Mythos 5",
+      "summary": "Anthropic described Fable 5 as a Mythos-class model made safe for general use, with Mythos 5 initially available through Project Glasswing.",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "impact": "Major frontier-model launch covering coding, knowledge work, vision, memory, and cyberdefense access.",
+      "tags": [
+        "Anthropic",
+        "model launch",
+        "cybersecurity",
+        "vision"
+      ]
     },
     {
-      id: "tweet-deepmind-tacticai-palmeiras-2026-06-11",
-      date: "2026-06-11",
-      category: "Tweets",
-      source: "@GoogleDeepMind",
-      title: "Google DeepMind shares TacticAI work with Palmeiras",
-      summary: "Google DeepMind said Palmeiras is building on TacticAI to simulate field scenarios and predict open-play dynamics up to eight seconds ahead.",
-      url: "https://x.com/GoogleDeepMind/status/2065093482088169719",
-      impact: "Good short-form signal for spatial AI, sports analytics, and robotics-adjacent modeling.",
-      tags: ["X", "Google DeepMind", "TacticAI", "sports AI"]
+      "id": "openai-memory-2026-06-04",
+      "date": "2026-06-04",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "OpenAI publishes research on better memory for a more helpful ChatGPT",
+      "summary": "OpenAI listed a research item titled Dreaming: Better memory for a more helpful ChatGPT.",
+      "url": "https://openai.com/news/",
+      "impact": "Useful signal for personal-assistant memory and long-running interaction design.",
+      "tags": [
+        "OpenAI",
+        "memory",
+        "ChatGPT"
+      ]
     },
     {
-      id: "youtube-shorts-monitor",
-      date: "2026-06-14",
-      category: "Hidden",
-      source: "Video monitor",
-      title: "Short-video source slot for AI demos and creator explainers",
-      summary: "The dashboard includes a short-video category for YouTube Shorts, TikTok, and Instagram Reels once the collector has credentials or imported URLs.",
-      url: "https://www.youtube.com/results?search_query=AI+tools+demo+shorts",
-      impact: "Captures demo-led AI trends that do not appear first in official blogs.",
-      tags: ["YouTube Shorts", "TikTok", "Instagram", "demo"]
+      "id": "anthropic-glasswing-2026-06-02",
+      "date": "2026-06-02",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Anthropic expands Project Glasswing",
+      "summary": "Anthropic said it is extending Project Glasswing to around 150 organizations in more than fifteen countries.",
+      "url": "https://www.anthropic.com/news",
+      "impact": "Tracks trusted-access deployment of cyber-capable frontier models.",
+      "tags": [
+        "Anthropic",
+        "Project Glasswing",
+        "cyberdefense"
+      ]
     },
     {
-      id: "meta-muse-spark-2026-04-08",
-      date: "2026-04-08",
-      category: "Hidden",
-      source: "AI at Meta",
-      title: "Meta introduces Muse Spark",
-      summary: "Meta's AI blog featured Muse Spark and described it as scaling toward personal superintelligence.",
-      url: "https://ai.meta.com/blog/",
-      impact: "Older than the strict last-30-day window but included as a model for Meta source formatting.",
-      tags: ["Meta", "research", "personal AI"]
+      "id": "anthropic-opus-48-2026-05-28",
+      "date": "2026-05-28",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Claude Opus 4.8 launches with dynamic workflows and effort control",
+      "summary": "Anthropic announced Opus 4.8, dynamic workflows for Claude Code, effort control, and cheaper fast mode.",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "impact": "Directly relevant to agentic coding, long-running tasks, and developer workflow automation.",
+      "tags": [
+        "Claude Code",
+        "Opus 4.8",
+        "agents",
+        "developer tools"
+      ]
+    },
+    {
+      "id": "meta-muse-spark-2026-04-08",
+      "date": "2026-04-08",
+      "category": "Hidden",
+      "source": "AI at Meta",
+      "title": "Meta introduces Muse Spark",
+      "summary": "Meta's AI blog featured Muse Spark and described it as scaling toward personal superintelligence.",
+      "url": "https://ai.meta.com/blog/",
+      "impact": "Older than the strict last-30-day window but included as a model for Meta source formatting.",
+      "tags": [
+        "Meta",
+        "research",
+        "personal AI"
+      ]
     }
   ]
 };
