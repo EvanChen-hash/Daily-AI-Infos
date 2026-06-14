@@ -1,0 +1,25 @@
+{
+  "description": "X (Twitter) accounts to follow and track for AI news",
+  "accounts": [
+    {
+      "handle": "@OpenAI",
+      "note": "Official OpenAI announcements"
+    },
+    {
+      "handle": "@AnthropicAI",
+      "note": "Official Anthropic announcements"
+    },
+    {
+      "handle": "@ycombinator",
+      "note": ""
+    },
+    {
+      "handle": "@mattpocockuk",
+      "note": ""
+    },
+    {
+      "handle": "@garrytan",
+      "note": ""
+    }
+  ]
+}

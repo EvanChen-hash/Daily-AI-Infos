@@ -1,7 +1,10 @@
 name: Daily AI News
 
 on:
+  push:
+    branches: [main]
   schedule:
+    # 23:00 UTC = 08:00 JST
     - cron: "0 23 * * *"
   workflow_dispatch:
 
