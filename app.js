@@ -441,7 +441,7 @@ function positionDetailPanel(anchorCard) {
   const gap = 12;
   const cardRect = anchorCard.getBoundingClientRect();
   const panelRect = els.detailPanel.getBoundingClientRect();
-  const panelWidth = Math.min(360, window.innerWidth - margin * 2);
+  const panelWidth = Math.min(540, window.innerWidth - margin * 2);
   const panelHeight = panelRect.height || 420;
   const rightX = cardRect.right + gap;
   const leftX = cardRect.left - panelWidth - gap;
@@ -472,8 +472,11 @@ function renderDetail(anchorCard = getSelectedCard()) {
   els.detail.innerHTML = `
     <div class="detail-content">
       <div class="detail-kicker">
-        <span class="pill">${item.category}</span>
-        <time datetime="${item.date}">${formatDate(item.date)}</time>
+        <div class="detail-meta">
+          <span class="pill">${item.category}</span>
+          <time datetime="${item.date}">${formatDate(item.date)}</time>
+        </div>
+        <a class="detail-link" href="${item.url}" target="_blank" rel="noreferrer">Open source</a>
       </div>
       <h3>${item.title}</h3>
       <p>${item.summary}</p>
@@ -482,7 +485,6 @@ function renderDetail(anchorCard = getSelectedCard()) {
         <li><strong>Why it matters:</strong> ${item.impact}</li>
         <li><strong>Tags:</strong> ${item.tags.join(", ")}</li>
       </ul>
-      <a class="detail-link" href="${item.url}" target="_blank" rel="noreferrer">Open source</a>
     </div>
   `;
   requestAnimationFrame(() => positionDetailPanel(anchorCard || getSelectedCard()));
