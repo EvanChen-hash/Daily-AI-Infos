@@ -375,9 +375,12 @@ const els = {
   videoItems: document.querySelector("#videoItems"),
   categoryFilters: document.querySelector("#categoryFilters"),
   sourceFilters: document.querySelector("#sourceFilters"),
+  themeToggle: document.querySelector("#themeToggle"),
   visibleCount: document.querySelector("#visibleCount"),
   feed: document.querySelector("#feed")
 };
+
+const themeStorageKey = "daily-ai-info-theme";
 
 function formatDate(value) {
   return value.replace(/-/g, "/");
@@ -405,6 +408,22 @@ function groupedByDate(items) {
     groups[item.date].push(item);
     return groups;
   }, {});
+}
+
+function getInitialTheme() {
+  const storedTheme = localStorage.getItem(themeStorageKey);
+  if (storedTheme === "dark" || storedTheme === "light") return storedTheme;
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem(themeStorageKey, theme);
+  if (!els.themeToggle) return;
+  const isDark = theme === "dark";
+  els.themeToggle.setAttribute("aria-pressed", String(isDark));
+  els.themeToggle.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
+  els.themeToggle.querySelector(".theme-toggle-label").textContent = isDark ? "Dark" : "Light";
 }
 
 function renderStats() {
@@ -577,6 +596,13 @@ els.resetButton.addEventListener("click", () => {
   els.searchInput.value = "";
   render();
 });
+
+els.themeToggle?.addEventListener("click", () => {
+  const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  applyTheme(currentTheme === "dark" ? "light" : "dark");
+});
+
+applyTheme(getInitialTheme());
 
 renderStats();
 renderRunStatus();
