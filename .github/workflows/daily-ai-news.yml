@@ -1,8 +1,6 @@
 name: Daily AI News
 
 on:
-  push:
-    branches: [main]
   schedule:
     # 23:00 UTC = 08:00 JST
     - cron: "0 23 * * *"
@@ -15,7 +13,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   refresh-and-deploy:
@@ -31,6 +29,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      - name: Pull latest changes
+        run: git pull --rebase origin main
 
       - name: Refresh daily AI news
         env:
