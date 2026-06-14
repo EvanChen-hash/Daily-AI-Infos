@@ -1,5 +1,5 @@
 const feedData = {
-  "generatedAt": "2026-06-14T08:47:50.415Z",
+  "generatedAt": "2026-06-14T09:01:26.419Z",
   "range": "2026-06-14 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
@@ -41,6 +41,51 @@ const feedData = {
       "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-jun-12-2026-https-www-anthropic-com-news-tcs-anthropic-partnership",
+      "date": "2026-06-14",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Jun 12, 2026",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-jun-12-2026-https-www-anthropic-com-news-anthropic-public-record",
+      "date": "2026-06-14",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Jun 12, 2026",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/anthropic-public-record",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-jun-11-2026-https-www-anthropic-com-news-dxc-anthropic-alliance",
+      "date": "2026-06-14",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Jun 11, 2026",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
