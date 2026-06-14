@@ -49,51 +49,6 @@ const feedData = {
       ]
     },
     {
-      "id": "auto-anthropic-news-announcements-https-www-anthropic-com-news-expanding-project-glasswing",
-      "date": "2026-06-14",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Announcements",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/expanding-project-glasswing",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-announcements-https-www-anthropic-com-news-claude-corps",
-      "date": "2026-06-14",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Announcements",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/claude-corps",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-announcements-https-www-anthropic-com-news-chris-olah-pope-leo-encyclical",
-      "date": "2026-06-14",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Announcements",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
       "id": "tweet-anthropic-directive-2026-06-13",
       "date": "2026-06-13",
       "category": "Tweets",
@@ -383,11 +338,7 @@ const els = {
 };
 
 function formatDate(value) {
-  return new Intl.DateTimeFormat("en", {
-    month: "short",
-    day: "numeric",
-    year: "numeric"
-  }).format(new Date(`${value}T12:00:00`));
+  return value.replace(/-/g, "/");
 }
 
 function getFilteredItems() {
@@ -524,7 +475,7 @@ function renderFeed(items) {
   els.feed.querySelectorAll(".feed-card").forEach((card) => {
     card.addEventListener("click", () => {
       state.selectedId = card.dataset.id;
-      renderDetail(card);
+      renderDetail();
       els.feed.querySelectorAll(".feed-card").forEach((node) => node.classList.toggle("active", node.dataset.id === state.selectedId));
     });
   });
@@ -550,34 +501,12 @@ function getSelectedCard() {
   return els.feed.querySelector(`.feed-card[data-id="${state.selectedId}"]`);
 }
 
-function positionDetailPanel(anchorCard) {
-  if (!els.detailPanel || !anchorCard) return;
-
-  const margin = 14;
-  const gap = 12;
-  const cardRect = anchorCard.getBoundingClientRect();
-  const panelRect = els.detailPanel.getBoundingClientRect();
-  const panelWidth = Math.min(567, window.innerWidth - margin * 2);
-  const panelHeight = panelRect.height || 420;
-  const rightX = cardRect.right + gap;
-  const leftX = cardRect.left - panelWidth - gap;
-  const canFitRight = rightX + panelWidth <= window.innerWidth - margin;
-  const canFitLeft = leftX >= margin;
-  let left = canFitRight ? rightX : canFitLeft ? leftX : Math.min(Math.max(cardRect.left, margin), window.innerWidth - panelWidth - margin);
-  let top = cardRect.top;
-
-  if (!canFitRight && !canFitLeft) {
-    top = cardRect.bottom + gap;
-  }
-
-  top = Math.min(Math.max(top, margin), Math.max(margin, window.innerHeight - panelHeight - margin));
-  els.detailPanel.style.width = `${panelWidth}px`;
-  els.detailPanel.style.left = `${left}px`;
-  els.detailPanel.style.top = `${top}px`;
+function positionDetailPanel() {
+  if (!els.detailPanel) return;
   els.detailPanel.classList.add("visible");
 }
 
-function renderDetail(anchorCard = getSelectedCard()) {
+function renderDetail() {
   const item = feedData.items.find((entry) => entry.id === state.selectedId) || getFilteredItems()[0] || feedData.items[0];
   if (!item) {
     els.detail.innerHTML = `<p>No item selected.</p>`;
@@ -603,7 +532,7 @@ function renderDetail(anchorCard = getSelectedCard()) {
       </ul>
     </div>
   `;
-  requestAnimationFrame(() => positionDetailPanel(anchorCard || getSelectedCard()));
+  requestAnimationFrame(() => positionDetailPanel());
 }
 
 function render() {
@@ -615,7 +544,7 @@ function render() {
   renderSourceFilters();
   renderDates();
   renderFeed(items);
-  renderDetail(getSelectedCard());
+  renderDetail();
 }
 
 els.searchInput.addEventListener("input", (event) => {
@@ -637,5 +566,5 @@ renderRunStatus();
 renderSourceStatus();
 render();
 
-window.addEventListener("resize", () => positionDetailPanel(getSelectedCard()));
-document.addEventListener("scroll", () => positionDetailPanel(getSelectedCard()), true);
+window.addEventListener("resize", () => positionDetailPanel());
+document.addEventListener("scroll", () => positionDetailPanel(), true);

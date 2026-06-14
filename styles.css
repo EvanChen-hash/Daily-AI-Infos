@@ -250,7 +250,7 @@ h1 {
 
 .topbar h2 {
   max-width: none;
-  font-size: clamp(34px, 4.2vw, 56px);
+  font-size: clamp(17px, 2.1vw, 28px);
   line-height: 1;
   letter-spacing: -0.04em;
   white-space: nowrap;
@@ -330,8 +330,21 @@ h1 {
 }
 
 .content-grid {
-  display: block;
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 18px;
   align-items: start;
+}
+
+.feed-column {
+  min-width: 0;
+}
+
+.visible-count {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .section-heading {
@@ -341,17 +354,12 @@ h1 {
   margin-bottom: 12px;
 }
 
-.section-heading h3 {
-  font-size: 22px;
-  letter-spacing: -0.03em;
-}
-
 .feed {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(320px, 380px);
   gap: 14px;
-  max-width: calc(100vw - 80px);
+  max-width: calc(100vw - 480px);
   overflow-x: auto;
   overscroll-behavior-x: contain;
   padding: 0 0 16px;
@@ -363,8 +371,8 @@ h1 {
   flex-wrap: nowrap;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  padding: 0 0 12px;
-  margin-bottom: 14px;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
   scroll-snap-type: x proximity;
 }
 
@@ -543,15 +551,14 @@ h1 {
 }
 
 .detail-panel {
-  position: fixed;
+  position: sticky;
+  top: 22px;
   z-index: 20;
   min-height: 0;
-  max-height: none;
-  overflow: visible;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(8px) scale(0.98);
-  transition: opacity 160ms ease, transform 160ms ease;
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  opacity: 1;
+  pointer-events: auto;
   border: 1px solid rgba(143, 184, 216, 0.28);
   border-radius: var(--radius);
   padding: 18px;
@@ -563,8 +570,6 @@ h1 {
 
 .detail-panel.visible {
   opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
 }
 
 .detail-panel {
@@ -702,7 +707,13 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
   .detail-panel {
+    position: relative;
+    top: 0;
     max-height: none;
   }
 
@@ -723,17 +734,11 @@ h1 {
   }
 
   .topbar h2 {
-    font-size: 36px;
+    font-size: 18px;
   }
 
   .top-actions {
     grid-template-columns: 1fr;
-  }
-
-  .section-heading {
-    align-items: start;
-    flex-direction: column;
-    gap: 4px;
   }
 
   .card-body {
@@ -741,7 +746,8 @@ h1 {
   }
 
   .feed {
-    grid-auto-columns: minmax(290px, 86vw);
+    grid-auto-columns: minmax(320px, 86vw);
+    max-width: calc(100vw - 36px);
   }
 
   .day-group {
@@ -761,7 +767,7 @@ h1 {
   }
 
   .topbar h2 {
-    font-size: 32px;
+    font-size: 16px;
   }
 
   .date-list,

@@ -60,10 +60,12 @@ async function fetchOfficialItems() {
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
       const html = await response.text();
       const seen = new Set();
+      const genericTitles = new Set(["announcements", "news", "blog", "research", "updates"]);
       for (const match of html.matchAll(source.match)) {
         const url = absoluteUrl(source.home, match[1]);
         const title = cleanTitle(match[2]);
         if (!title || seen.has(url)) continue;
+        if (genericTitles.has(title.toLowerCase())) continue;
         seen.add(url);
         items.push({
           id: makeId(source.name, title, url),
