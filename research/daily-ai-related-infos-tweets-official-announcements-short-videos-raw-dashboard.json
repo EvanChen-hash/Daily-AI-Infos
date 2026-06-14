@@ -1,0 +1,110 @@
+{
+  "artifacts": {
+    "grounding": [],
+    "plan_source": "external",
+    "pre_research_flags_present": true,
+    "resolved": {
+      "context": "",
+      "entity": "daily AI-related infos tweets official announcements short videos",
+      "github_repos": [],
+      "github_user": "",
+      "subreddits": [
+        "OpenAI",
+        "ClaudeAI",
+        "LocalLLaMA",
+        "MachineLearning",
+        "singularity",
+        "ArtificialInteligence",
+        "ChatGPT",
+        "StableDiffusion",
+        "comfyui"
+      ],
+      "x_handle": ""
+    }
+  },
+  "clusters": [],
+  "errors_by_source": {},
+  "generated_at": "2026-06-14T07:36:59.618321+00:00",
+  "items_by_source": {
+    "hackernews": [],
+    "polymarket": [],
+    "reddit": [],
+    "youtube": []
+  },
+  "provider_runtime": {
+    "planner_model": "deterministic",
+    "reasoning_provider": "local",
+    "rerank_model": "local-score"
+  },
+  "query_plan": {
+    "cluster_mode": "story",
+    "freshness_mode": "strict_recent",
+    "intent": "breaking_news",
+    "notes": [],
+    "raw_topic": "daily AI-related infos tweets official announcements short videos",
+    "source_weights": {
+      "hackernews": 0.25,
+      "polymarket": 0.25,
+      "reddit": 0.25,
+      "youtube": 0.25
+    },
+    "subqueries": [
+      {
+        "label": "daily_ai_announcements",
+        "ranking_query": "What important AI product launches, official announcements, model updates, API releases, and agent/tool releases happened in the last 30 days?",
+        "search_query": "AI model launch official announcement developer API agents video",
+        "sources": [
+          "reddit",
+          "youtube",
+          "hackernews",
+          "polymarket"
+        ],
+        "weight": 0.29850746268656714
+      },
+      {
+        "label": "official_labs",
+        "ranking_query": "Which official AI lab announcements are developers and users discussing most in the last 30 days?",
+        "search_query": "OpenAI Anthropic Google DeepMind Meta AI xAI Mistral official",
+        "sources": [
+          "reddit",
+          "youtube",
+          "hackernews",
+          "polymarket"
+        ],
+        "weight": 0.2537313432835821
+      },
+      {
+        "label": "ai_short_video_demos",
+        "ranking_query": "Which short AI tool demos, video clips, and creator explainers are gaining attention in the last 30 days?",
+        "search_query": "AI tools demo generative video agents prompt engineering",
+        "sources": [
+          "reddit",
+          "youtube",
+          "hackernews",
+          "polymarket"
+        ],
+        "weight": 0.23880597014925373
+      },
+      {
+        "label": "developer_discussion",
+        "ranking_query": "What are developers saying about AI coding agents, MCP workflows, and new AI developer tools in the last 30 days?",
+        "search_query": "AI coding agents MCP workflows developer tools",
+        "sources": [
+          "reddit",
+          "youtube",
+          "hackernews",
+          "polymarket"
+        ],
+        "weight": 0.208955223880597
+      }
+    ]
+  },
+  "range_from": "2026-05-15",
+  "range_to": "2026-06-14",
+  "ranked_candidates": [],
+  "topic": "daily AI-related infos tweets official announcements short videos",
+  "warnings": [
+    "No candidates survived retrieval and ranking.",
+    "Evidence is thin for this topic."
+  ]
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily AI Info Station</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Briefing board</p>
+            <div class="headline-row">
+              <h2>AI signals by date</h2>
+            </div>
+            <p class="lede">Official announcements and verified X posts arranged as a horizontal daily board.</p>
+          </div>
+          <div class="top-actions">
+            <label class="search-box">
+              <span>Search</span>
+              <input id="searchInput" type="search" placeholder="models, tweets, videos, agents..." />
+            </label>
+            <button id="resetButton" class="ghost-button" type="button">Reset</button>
+          </div>
+        </header>
+
+        <section class="controls" aria-label="Filters">
+          <div id="categoryFilters" class="segmented"></div>
+          <div id="sourceFilters" class="source-filters"></div>
+        </section>
+
+        <section class="content-grid">
+          <div>
+            <div class="section-heading">
+              <h3>Date columns</h3>
+              <span id="visibleCount">0 visible</span>
+            </div>
+            <div id="dateList" class="date-list sliding-date-bar" aria-label="Date filter"></div>
+            <div id="feed" class="feed"></div>
+          </div>
+
+          <aside class="detail-panel" aria-label="Selected item">
+            <div class="panel-label">Selected item</div>
+            <div id="detail"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

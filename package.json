@@ -1,0 +1,10 @@
+{
+  "name": "daily-ai-infos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update:news": "node scripts/fetch-daily-ai-news.mjs",
+    "check": "node --check app.js && node --check scripts/fetch-daily-ai-news.mjs"
+  }
+}
