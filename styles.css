@@ -546,7 +546,7 @@ h1 {
   position: fixed;
   z-index: 20;
   min-height: 0;
-  max-height: min(630px, calc(100vh - 28px));
+  max-height: min(662px, calc(100vh - 28px));
   overflow: auto;
   opacity: 0;
   pointer-events: none;
@@ -692,7 +692,7 @@ h1 {
   }
 
   .detail-panel {
-    max-height: min(630px, calc(100vh - 28px));
+    max-height: min(662px, calc(100vh - 28px));
   }
 
   .date-list,
