@@ -1,5 +1,5 @@
 const feedData = {
-  "generatedAt": "2026-06-14T08:42:47.885Z",
+  "generatedAt": "2026-06-14T08:44:14.026Z",
   "range": "2026-06-14 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
