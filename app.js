@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-06-14T09:01:26.419Z",
-  "range": "2026-06-14 daily refresh",
+  "generatedAt": "2026-06-15T00:05:47.060Z",
+  "range": "2026-06-15 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -18,24 +18,8 @@ const feedData = {
   },
   "items": [
     {
-      "id": "youtube-shorts-monitor",
-      "date": "2026-06-14",
-      "category": "Hidden",
-      "source": "Video monitor",
-      "title": "Short-video source slot for AI demos and creator explainers",
-      "summary": "The dashboard includes a short-video category for YouTube Shorts, TikTok, and Instagram Reels once the collector has credentials or imported URLs.",
-      "url": "https://www.youtube.com/results?search_query=AI+tools+demo+shorts",
-      "impact": "Captures demo-led AI trends that do not appear first in official blogs.",
-      "tags": [
-        "YouTube Shorts",
-        "TikTok",
-        "Instagram",
-        "demo"
-      ]
-    },
-    {
       "id": "auto-anthropic-news-statement-on-the-us-government-directive-to-suspend-access-to-fable-5-and-m",
-      "date": "2026-06-14",
+      "date": "2026-06-15",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
@@ -50,7 +34,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-jun-12-2026-https-www-anthropic-com-news-tcs-anthropic-partnership",
-      "date": "2026-06-14",
+      "date": "2026-06-15",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Jun 12, 2026",
@@ -65,7 +49,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-jun-12-2026-https-www-anthropic-com-news-anthropic-public-record",
-      "date": "2026-06-14",
+      "date": "2026-06-15",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Jun 12, 2026",
@@ -80,7 +64,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-jun-11-2026-https-www-anthropic-com-news-dxc-anthropic-alliance",
-      "date": "2026-06-14",
+      "date": "2026-06-15",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Jun 11, 2026",
@@ -91,6 +75,22 @@ const feedData = {
         "Anthropic",
         "official",
         "daily refresh"
+      ]
+    },
+    {
+      "id": "youtube-shorts-monitor",
+      "date": "2026-06-14",
+      "category": "Hidden",
+      "source": "Video monitor",
+      "title": "Short-video source slot for AI demos and creator explainers",
+      "summary": "The dashboard includes a short-video category for YouTube Shorts, TikTok, and Instagram Reels once the collector has credentials or imported URLs.",
+      "url": "https://www.youtube.com/results?search_query=AI+tools+demo+shorts",
+      "impact": "Captures demo-led AI trends that do not appear first in official blogs.",
+      "tags": [
+        "YouTube Shorts",
+        "TikTok",
+        "Instagram",
+        "demo"
       ]
     },
     {
