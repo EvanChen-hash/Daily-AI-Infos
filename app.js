@@ -37,7 +37,7 @@ const feedData = {
       "date": "2026-06-15",
       "category": "Official",
       "source": "Anthropic News",
-      "title": "Jun 12, 2026",
+      "title": "Tcs Anthropic Partnership",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
       "impact": "Daily official-source refresh item. Review source for full context.",
@@ -52,7 +52,7 @@ const feedData = {
       "date": "2026-06-15",
       "category": "Official",
       "source": "Anthropic News",
-      "title": "Jun 12, 2026",
+      "title": "Anthropic Public Record",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/anthropic-public-record",
       "impact": "Daily official-source refresh item. Review source for full context.",
@@ -67,7 +67,7 @@ const feedData = {
       "date": "2026-06-15",
       "category": "Official",
       "source": "Anthropic News",
-      "title": "Jun 11, 2026",
+      "title": "Dxc Anthropic Alliance",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
       "impact": "Daily official-source refresh item. Review source for full context.",
@@ -359,20 +359,18 @@ const state = {
 
 const visibleCategories = ["Official", "Tweets"];
 const categoryOrder = ["All", ...visibleCategories];
-const todayKey = new Date(feedData.generatedAt).toISOString().slice(0, 10);
+const dashboardTimeZone = "Asia/Tokyo";
+const todayKey = new Intl.DateTimeFormat("en-CA", {
+  timeZone: dashboardTimeZone,
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit"
+}).format(new Date(feedData.generatedAt));
 
 const els = {
-  runDate: document.querySelector("#runDate"),
-  runRange: document.querySelector("#runRange"),
-  runNote: document.querySelector("#runNote"),
   dateList: document.querySelector("#dateList"),
   searchInput: document.querySelector("#searchInput"),
   resetButton: document.querySelector("#resetButton"),
-  sourceStatus: document.querySelector("#sourceStatus"),
-  totalItems: document.querySelector("#totalItems"),
-  officialItems: document.querySelector("#officialItems"),
-  tweetItems: document.querySelector("#tweetItems"),
-  videoItems: document.querySelector("#videoItems"),
   categoryFilters: document.querySelector("#categoryFilters"),
   sourceFilters: document.querySelector("#sourceFilters"),
   themeToggle: document.querySelector("#themeToggle"),
@@ -424,40 +422,6 @@ function applyTheme(theme) {
   els.themeToggle.setAttribute("aria-pressed", String(isDark));
   els.themeToggle.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
   els.themeToggle.querySelector(".theme-toggle-label").textContent = isDark ? "Dark" : "Light";
-}
-
-function renderStats() {
-  if (!els.totalItems || !els.officialItems || !els.tweetItems || !els.videoItems) return;
-  const visibleItems = feedData.items.filter((item) => visibleCategories.includes(item.category));
-  const todayItems = visibleItems.filter((item) => item.date === todayKey);
-  els.totalItems.textContent = todayItems.length;
-  els.officialItems.textContent = todayItems.filter((item) => item.category === "Official").length;
-  els.tweetItems.textContent = todayItems.filter((item) => item.category === "Tweets").length;
-  els.videoItems.textContent = new Set(visibleItems.map((item) => item.date)).size;
-}
-
-function renderRunStatus() {
-  if (!els.runDate || !els.runRange || !els.runNote) return;
-  els.runDate.textContent = new Intl.DateTimeFormat("en", {
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-  }).format(new Date(feedData.generatedAt));
-  els.runRange.textContent = feedData.range;
-  els.runNote.textContent = feedData.collector.note;
-}
-
-function renderSourceStatus() {
-  if (!els.sourceStatus) return;
-  els.sourceStatus.innerHTML = feedData.collector.coverage
-    .map((entry) => `
-      <div class="source-status-row">
-        <span>${entry.source}</span>
-        <strong>${entry.status}</strong>
-      </div>
-    `)
-    .join("");
 }
 
 function renderCategoryFilters() {
@@ -603,10 +567,6 @@ els.themeToggle?.addEventListener("click", () => {
 });
 
 applyTheme(getInitialTheme());
-
-renderStats();
-renderRunStatus();
-renderSourceStatus();
 render();
 
 window.addEventListener("scroll", updateActiveDateFromScroll, { passive: true });

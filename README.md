@@ -27,7 +27,7 @@ This repo is configured for GitHub Pages through `.github/workflows/daily-ai-new
 
 The workflow:
 
-- Runs daily at `22:10 UTC`
+- Runs daily at `23:00 UTC` (`08:00 JST`)
 - Can be triggered manually with `workflow_dispatch`
 - Runs `npm run update:news`
 - Commits refreshed `app.js` data if changed

@@ -2,7 +2,8 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const APP_FILE = new URL("../app.js", import.meta.url);
 const now = new Date();
-const today = now.toISOString().slice(0, 10);
+const JST_TIME_ZONE = "Asia/Tokyo";
+const today = formatDateKey(now, JST_TIME_ZONE);
 
 const sources = [
   {
@@ -14,7 +15,7 @@ const sources = [
   {
     name: "Anthropic News",
     home: "https://www.anthropic.com/news",
-    match: /href="(\/news\/[^"]+)".{0,240}?>([^<]{12,140})</gis,
+    match: /href="(\/news\/[^"]+)".{0,320}?aria-label="([^"]{12,180})"/gis,
     tag: "Anthropic"
   },
   {
@@ -35,6 +36,15 @@ function cleanTitle(value) {
     .trim();
 }
 
+function formatDateKey(value, timeZone) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(value);
+}
+
 function absoluteUrl(base, href) {
   return new URL(href, base).toString();
 }
@@ -46,6 +56,40 @@ function makeId(source, title, url) {
     .replace(/^-|-$/g, "")
     .slice(0, 90);
   return `auto-${slug}`;
+}
+
+function titleLooksGeneric(title) {
+  return new Set(["announcements", "news", "blog", "research", "updates"]).has(title.toLowerCase());
+}
+
+function titleLooksLikeDate(title) {
+  return /^(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2},\s+\d{4}$/i.test(title);
+}
+
+function titleFromUrl(url) {
+  const slug = new URL(url).pathname.split("/").filter(Boolean).pop() ?? "";
+  return slug
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+    .trim();
+}
+
+function normalizeOfficialTitle(rawTitle, url) {
+  const title = cleanTitle(rawTitle);
+  if (!title || titleLooksGeneric(title) || titleLooksLikeDate(title)) {
+    return titleFromUrl(url);
+  }
+  return title;
+}
+
+function sanitizeFeedItem(item) {
+  if (item.category !== "Official") return item;
+  const title = normalizeOfficialTitle(item.title, item.url);
+  return {
+    ...item,
+    id: makeId(item.source, title, item.url),
+    title
+  };
 }
 
 async function fetchOfficialItems() {
@@ -60,12 +104,10 @@ async function fetchOfficialItems() {
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
       const html = await response.text();
       const seen = new Set();
-      const genericTitles = new Set(["announcements", "news", "blog", "research", "updates"]);
       for (const match of html.matchAll(source.match)) {
         const url = absoluteUrl(source.home, match[1]);
-        const title = cleanTitle(match[2]);
+        const title = normalizeOfficialTitle(match[2], url);
         if (!title || seen.has(url)) continue;
-        if (genericTitles.has(title.toLowerCase())) continue;
         seen.add(url);
         items.push({
           id: makeId(source.name, title, url),
@@ -100,7 +142,7 @@ function replaceFeedData(appText, feedData) {
 
 const appText = await readFile(APP_FILE, "utf8");
 const feedData = extractFeedData(appText);
-const existing = new Map(feedData.items.map((item) => [item.url, item]));
+const existing = new Map(feedData.items.map((item) => [item.url, sanitizeFeedItem(item)]));
 const freshItems = await fetchOfficialItems();
 
 for (const item of freshItems) {
