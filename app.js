@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-06-15T00:05:47.060Z",
-  "range": "2026-06-15 daily refresh",
+  "generatedAt": "2026-06-16T00:28:06.166Z",
+  "range": "2026-06-16 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -18,6 +18,21 @@ const feedData = {
   },
   "items": [
     {
+      "id": "auto-anthropic-news-tcs-anthropic-partnership-https-www-anthropic-com-news-tcs-anthropic-partne",
+      "date": "2026-06-15",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Tcs Anthropic Partnership",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
       "id": "auto-anthropic-news-statement-on-the-us-government-directive-to-suspend-access-to-fable-5-and-m",
       "date": "2026-06-15",
       "category": "Official",
@@ -33,43 +48,28 @@ const feedData = {
       ]
     },
     {
-      "id": "auto-anthropic-news-jun-12-2026-https-www-anthropic-com-news-tcs-anthropic-partnership",
-      "date": "2026-06-15",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Tcs Anthropic Partnership",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-jun-12-2026-https-www-anthropic-com-news-anthropic-public-record",
-      "date": "2026-06-15",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Anthropic Public Record",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/anthropic-public-record",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-jun-11-2026-https-www-anthropic-com-news-dxc-anthropic-alliance",
+      "id": "auto-anthropic-news-dxc-anthropic-alliance-https-www-anthropic-com-news-dxc-anthropic-alliance",
       "date": "2026-06-15",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Dxc Anthropic Alliance",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-anthropic-public-record-https-www-anthropic-com-news-anthropic-public-recor",
+      "date": "2026-06-15",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Anthropic Public Record",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/anthropic-public-record",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
@@ -191,7 +191,7 @@ const feedData = {
       ]
     },
     {
-      "id": "openai-academy-2026-06-12",
+      "id": "auto-openai-news-openai-academy-adds-ai-foundations-applied-ai-foundations-and-agents-and-workf",
       "date": "2026-06-12",
       "category": "Official",
       "source": "OpenAI News",
@@ -255,7 +255,7 @@ const feedData = {
       ]
     },
     {
-      "id": "openai-oracle-2026-06-10",
+      "id": "auto-openai-news-openai-models-and-codex-will-be-accessible-through-oracle-cloud-commitments-ht",
       "date": "2026-06-10",
       "category": "Official",
       "source": "OpenAI News",
@@ -271,7 +271,7 @@ const feedData = {
       ]
     },
     {
-      "id": "anthropic-fable-mythos-2026-06-09",
+      "id": "auto-anthropic-news-anthropic-launches-claude-fable-5-and-claude-mythos-5-https-www-anthropic-c",
       "date": "2026-06-09",
       "category": "Official",
       "source": "Anthropic News",
@@ -287,7 +287,7 @@ const feedData = {
       ]
     },
     {
-      "id": "openai-memory-2026-06-04",
+      "id": "auto-openai-news-openai-publishes-research-on-better-memory-for-a-more-helpful-chatgpt-https-op",
       "date": "2026-06-04",
       "category": "Official",
       "source": "OpenAI News",
@@ -302,7 +302,7 @@ const feedData = {
       ]
     },
     {
-      "id": "anthropic-glasswing-2026-06-02",
+      "id": "auto-anthropic-news-anthropic-expands-project-glasswing-https-www-anthropic-com-news",
       "date": "2026-06-02",
       "category": "Official",
       "source": "Anthropic News",
@@ -317,7 +317,7 @@ const feedData = {
       ]
     },
     {
-      "id": "anthropic-opus-48-2026-05-28",
+      "id": "auto-anthropic-news-claude-opus-4-8-launches-with-dynamic-workflows-and-effort-control-https-ww",
       "date": "2026-05-28",
       "category": "Official",
       "source": "Anthropic News",
