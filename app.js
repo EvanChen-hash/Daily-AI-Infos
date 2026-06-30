@@ -374,7 +374,7 @@ const els = {
   categoryFilters: document.querySelector("#categoryFilters"),
   sourceFilters: document.querySelector("#sourceFilters"),
   themeToggle: document.querySelector("#themeToggle"),
-  visibleCount: document.querySelector("#visibleCount"),
+  statsGrid: document.querySelector("#statsGrid"),
   feed: document.querySelector("#feed")
 };
 
@@ -421,14 +421,44 @@ function applyTheme(theme) {
   const isDark = theme === "dark";
   els.themeToggle.setAttribute("aria-pressed", String(isDark));
   els.themeToggle.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
-  els.themeToggle.querySelector(".theme-toggle-label").textContent = isDark ? "Dark" : "Light";
+  const label = els.themeToggle.querySelector(".theme-toggle-label");
+  if (label) label.textContent = isDark ? "Dark" : "Light";
+}
+
+function getCategoryCounts() {
+  const visibleItems = feedData.items.filter((item) => visibleCategories.includes(item.category));
+  const counts = { All: visibleItems.length };
+  for (const cat of visibleCategories) {
+    counts[cat] = visibleItems.filter((item) => item.category === cat).length;
+  }
+  return counts;
+}
+
+function renderStats() {
+  if (!els.statsGrid) return;
+  const visibleItems = feedData.items.filter((item) => visibleCategories.includes(item.category));
+  const totals = [
+    { label: "Total items", value: visibleItems.length },
+    { label: "Official", value: visibleItems.filter((i) => i.category === "Official").length },
+    { label: "X posts", value: visibleItems.filter((i) => i.category === "Tweets").length },
+    { label: "Sources", value: new Set(visibleItems.map((i) => i.source)).size }
+  ];
+  els.statsGrid.innerHTML = totals
+    .map(({ label, value }) => `
+      <div class="stat-card">
+        <span class="stat-label">${label}</span>
+        <span class="stat-value">${value}</span>
+      </div>
+    `)
+    .join("");
 }
 
 function renderCategoryFilters() {
-  const visibleItems = feedData.items.filter((item) => visibleCategories.includes(item.category));
+  const counts = getCategoryCounts();
   els.categoryFilters.innerHTML = categoryOrder
     .map((category) => {
-      return `<button class="filter-button ${state.category === category ? "active" : ""}" data-category="${category}" type="button">${category}</button>`;
+      const count = counts[category] ?? 0;
+      return `<button class="filter-chip ${state.category === category ? "active" : ""}" data-category="${category}" type="button">${category}<span class="chip-count">${count}</span></button>`;
     })
     .join("");
 
@@ -441,9 +471,10 @@ function renderCategoryFilters() {
 }
 
 function renderSourceFilters() {
-  const sources = ["All", ...new Set(feedData.items.filter((item) => visibleCategories.includes(item.category)).map((item) => item.source))];
+  const visibleItems = feedData.items.filter((item) => visibleCategories.includes(item.category));
+  const sources = ["All", ...new Set(visibleItems.map((item) => item.source))];
   els.sourceFilters.innerHTML = sources
-    .map((source) => `<button class="source-chip ${state.source === source ? "active" : ""}" data-source="${source}" type="button">${source}</button>`)
+    .map((source) => `<button class="filter-chip ${state.source === source ? "active" : ""}" data-source="${source}" type="button">${source}</button>`)
     .join("");
 
   els.sourceFilters.querySelectorAll("button").forEach((button) => {
@@ -460,10 +491,15 @@ function renderDates() {
   if (!state.activeDate || !dates.includes(state.activeDate)) {
     state.activeDate = dates[0] || "";
   }
+  const countByDate = visibleItems.reduce((acc, item) => {
+    acc[item.date] = (acc[item.date] || 0) + 1;
+    return acc;
+  }, {});
   els.dateList.innerHTML = dates
     .map((date) => {
       const label = date === todayKey ? "Today" : formatDate(date).slice(5);
-      return `<button class="date-node ${state.activeDate === date ? "active" : ""}" data-date="${date}" type="button"><span>${label}</span></button>`;
+      const count = countByDate[date] || 0;
+      return `<button class="date-pill ${state.activeDate === date ? "active" : ""}" data-date="${date}" type="button"><span>${label}</span><span class="date-pill-count">${count}</span></button>`;
     })
     .join("");
 
@@ -480,7 +516,6 @@ function renderDates() {
 }
 
 function renderFeed(items) {
-  els.visibleCount.textContent = `${items.length} visible`;
   if (!items.length) {
     els.feed.innerHTML = `<div class="empty">No items match the current filters.</div>`;
     return;
@@ -508,7 +543,7 @@ function renderCard(item) {
     <article class="feed-card" data-id="${item.id}" data-category="${item.category}">
       <div class="card-topline">
         <span class="resource-tag ${isTweet ? "tweet-pill" : "official-pill"}"><span class="tag-icon" aria-hidden="true">${resourceIcon}</span>${resourceLabel}</span>
-        <a class="source-button" href="${item.url}" target="_blank" rel="noreferrer">${item.source}</a>
+        <a class="source-link" href="${item.url}" target="_blank" rel="noreferrer">${item.source}</a>
       </div>
       <h4>${item.title}</h4>
       <p class="card-summary">${item.summary}</p>
@@ -519,7 +554,7 @@ function renderCard(item) {
 }
 
 function syncActiveDate() {
-  els.dateList.querySelectorAll(".date-node").forEach((node) => {
+  els.dateList.querySelectorAll(".date-pill").forEach((node) => {
     node.classList.toggle("active", node.dataset.date === state.activeDate);
   });
 }
@@ -540,6 +575,7 @@ function updateActiveDateFromScroll() {
 
 function render() {
   const items = getFilteredItems();
+  renderStats();
   renderCategoryFilters();
   renderSourceFilters();
   renderDates();
