@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,39 +9,43 @@
   <body>
     <div class="app-shell">
       <main class="main">
+
         <header class="topbar">
-          <div>
-            <div class="headline-row">
-              <h2>AI signals by date</h2>
-            </div>
+          <div class="brand-block">
+            <span class="brand-label">Briefing Board</span>
+            <h1 class="site-title">AI signals by day</h1>
+            <p class="site-subtitle">Official announcements, social-source slots, short-video leads, and developer updates in one dated feed.</p>
           </div>
-          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="true">
             <span class="theme-toggle-track" aria-hidden="true">
               <span class="theme-toggle-knob"></span>
             </span>
-            <span class="theme-toggle-label">Light</span>
+            <span class="theme-toggle-label">Dark</span>
           </button>
         </header>
 
         <section class="controls" aria-label="Filters">
-          <div id="categoryFilters" class="segmented"></div>
-          <div class="filter-row">
-            <div id="sourceFilters" class="source-filters"></div>
+          <div class="search-reset-row">
             <label class="search-box">
-              <span>Search</span>
-              <input id="searchInput" type="search" placeholder="" />
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input id="searchInput" type="search" placeholder="models, tweets, videos, agents…" />
             </label>
-            <button id="resetButton" class="ghost-button" type="button">Reset</button>
+            <button id="resetButton" class="reset-button" type="button">Reset</button>
           </div>
+
+          <div id="statsGrid" class="stats-grid"></div>
+
+          <div id="categoryFilters" class="chip-row category-chips"></div>
+          <div id="sourceFilters" class="chip-row source-chips"></div>
         </section>
 
         <section class="content-grid">
-          <aside id="dateList" class="timeline-rail" aria-label="Date navigation"></aside>
+          <aside id="dateList" class="date-rail" aria-label="Date navigation"></aside>
           <div class="feed-column">
-            <span id="visibleCount" class="visible-count">0 visible</span>
             <div id="feed" class="feed"></div>
           </div>
         </section>
+
       </main>
     </div>
 
