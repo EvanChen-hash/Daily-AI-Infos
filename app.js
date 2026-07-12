@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-07-11T23:50:49.399Z",
-  "range": "2026-07-12 daily refresh",
+  "generatedAt": "2026-07-12T23:49:18.537Z",
+  "range": "2026-07-13 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
