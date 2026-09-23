@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-09-22T01:23:59.714Z",
-  "range": "2026-09-22 daily refresh",
+  "generatedAt": "2026-09-23T01:11:23.741Z",
+  "range": "2026-09-23 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -17,6 +17,36 @@ const feedData = {
     ]
   },
   "items": [
+    {
+      "id": "auto-openai-news-intelligence-age-https-openai-com-news-intelligence-age",
+      "date": "2026-09-23",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "Intelligence Age",
+      "summary": "Official update detected from OpenAI News.",
+      "url": "https://openai.com/news/intelligence-age/",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "OpenAI",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-openai-news-global-affairs-https-openai-com-news-global-affairs",
+      "date": "2026-09-23",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "Global Affairs",
+      "summary": "Official update detected from OpenAI News.",
+      "url": "https://openai.com/news/global-affairs/",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "OpenAI",
+        "official",
+        "daily refresh"
+      ]
+    },
     {
       "id": "auto-anthropic-news-tcs-anthropic-partnership-https-www-anthropic-com-news-tcs-anthropic-partne",
       "date": "2026-06-15",
