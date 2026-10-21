@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-10-20T01:29:28.678Z",
-  "range": "2026-10-20 daily refresh",
+  "generatedAt": "2026-10-21T01:13:10.934Z",
+  "range": "2026-10-21 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -17,6 +17,66 @@ const feedData = {
     ]
   },
   "items": [
+    {
+      "id": "auto-anthropic-news-show-details-for-investing-in-the-public-benefit-https-www-anthropic-com-ne",
+      "date": "2026-10-21",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for Investing in the public benefit",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/public-benefit-fund",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-show-details-for-an-update-on-independent-evaluators-https-www-anthropic-co",
+      "date": "2026-10-21",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for An update on independent evaluators",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-investing-in-the-public-benefit-details-https-www-anthropic-com-news-announ",
+      "date": "2026-10-21",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Investing in the public benefit details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/announcements",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-an-update-on-independent-evaluators-details-https-www-anthropic-com-news-po",
+      "date": "2026-10-21",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "An update on independent evaluators details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/policy",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
     {
       "id": "auto-openai-news-intelligence-age-https-openai-com-news-intelligence-age",
       "date": "2026-09-23",
