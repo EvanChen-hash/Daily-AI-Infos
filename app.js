@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-10-21T01:13:10.934Z",
-  "range": "2026-10-21 daily refresh",
+  "generatedAt": "2026-10-22T01:09:26.033Z",
+  "range": "2026-10-22 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -18,13 +18,58 @@ const feedData = {
   },
   "items": [
     {
+      "id": "auto-anthropic-news-show-details-for-physicist-christopher-stubbs-joins-anthropic-s-long-term-b",
+      "date": "2026-10-22",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
       "id": "auto-anthropic-news-show-details-for-investing-in-the-public-benefit-https-www-anthropic-com-ne",
-      "date": "2026-10-21",
+      "date": "2026-10-22",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Investing in the public benefit",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/public-benefit-fund",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-physicist-christopher-stubbs-joins-anthropic-s-long-term-benefit-trust-deta",
+      "date": "2026-10-22",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/announcements",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-an-update-on-independent-evaluators-details-https-www-anthropic-com-news-po",
+      "date": "2026-10-22",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "An update on independent evaluators details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/policy",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
@@ -40,36 +85,6 @@ const feedData = {
       "title": "Show details for An update on independent evaluators",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-investing-in-the-public-benefit-details-https-www-anthropic-com-news-announ",
-      "date": "2026-10-21",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Investing in the public benefit details",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/announcements",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-an-update-on-independent-evaluators-details-https-www-anthropic-com-news-po",
-      "date": "2026-10-21",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "An update on independent evaluators details",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/policy",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
