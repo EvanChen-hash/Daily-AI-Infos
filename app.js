@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-10-25T00:45:08.127Z",
-  "range": "2026-10-25 daily refresh",
+  "generatedAt": "2026-10-26T00:57:06.676Z",
+  "range": "2026-10-26 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -19,7 +19,7 @@ const feedData = {
   "items": [
     {
       "id": "auto-anthropic-news-show-details-for-physicist-christopher-stubbs-joins-anthropic-s-long-term-b",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
@@ -34,7 +34,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-show-details-for-open-call-for-guest-investigators-in-the-life-sciences-htt",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Open call for guest investigators in the life sciences",
@@ -49,7 +49,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-open-call-for-guest-investigators-in-the-life-sciences-details-https-www-an",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Open call for guest investigators in the life sciences details",
@@ -64,7 +64,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-donating-agent-skills-to-the-agentic-ai-foundation-details-https-www-anthro",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Donating Agent Skills to the Agentic AI Foundation details",
