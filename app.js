@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-10-26T00:57:06.676Z",
-  "range": "2026-10-26 daily refresh",
+  "generatedAt": "2026-10-27T01:47:06.283Z",
+  "range": "2026-10-27 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -19,7 +19,7 @@ const feedData = {
   "items": [
     {
       "id": "auto-anthropic-news-show-details-for-physicist-christopher-stubbs-joins-anthropic-s-long-term-b",
-      "date": "2026-10-26",
+      "date": "2026-10-27",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
@@ -34,7 +34,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-show-details-for-open-call-for-guest-investigators-in-the-life-sciences-htt",
-      "date": "2026-10-26",
+      "date": "2026-10-27",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Open call for guest investigators in the life sciences",
@@ -48,13 +48,13 @@ const feedData = {
       ]
     },
     {
-      "id": "auto-anthropic-news-open-call-for-guest-investigators-in-the-life-sciences-details-https-www-an",
-      "date": "2026-10-26",
+      "id": "auto-anthropic-news-donating-agent-skills-to-the-agentic-ai-foundation-details-https-www-anthro",
+      "date": "2026-10-27",
       "category": "Official",
       "source": "Anthropic News",
-      "title": "Open call for guest investigators in the life sciences details",
+      "title": "Donating Agent Skills to the Agentic AI Foundation details",
       "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/announcements",
+      "url": "https://www.anthropic.com/news/product",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
@@ -63,13 +63,13 @@ const feedData = {
       ]
     },
     {
-      "id": "auto-anthropic-news-donating-agent-skills-to-the-agentic-ai-foundation-details-https-www-anthro",
-      "date": "2026-10-26",
+      "id": "auto-anthropic-news-anthropic-files-s-1-with-the-sec-for-proposed-initial-public-offering-detai",
+      "date": "2026-10-27",
       "category": "Official",
       "source": "Anthropic News",
-      "title": "Donating Agent Skills to the Agentic AI Foundation details",
+      "title": "Anthropic files S-1 with the SEC for proposed initial public offering details",
       "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/product",
+      "url": "https://www.anthropic.com/news/announcements",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
