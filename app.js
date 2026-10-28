@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-10-27T01:47:06.283Z",
-  "range": "2026-10-27 daily refresh",
+  "generatedAt": "2026-10-28T01:59:42.968Z",
+  "range": "2026-10-28 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -17,6 +17,66 @@ const feedData = {
     ]
   },
   "items": [
+    {
+      "id": "auto-anthropic-news-show-details-for-expanding-our-partnership-with-gsa-to-bring-claude-to-all-",
+      "date": "2026-10-28",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for Expanding our partnership with GSA to bring Claude to all levels of government",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-show-details-for-anthropic-files-s-1-with-the-sec-for-proposed-initial-publ",
+      "date": "2026-10-28",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for Anthropic files S-1 with the SEC for proposed initial public offering",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/s1-sec",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-expanding-our-partnership-with-gsa-to-bring-claude-to-all-levels-of-governm",
+      "date": "2026-10-28",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Expanding our partnership with GSA to bring Claude to all levels of government details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/partnerships",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-early-progress-on-accelerating-drug-development-with-claude-details-https-w",
+      "date": "2026-10-28",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Early progress on accelerating drug development with Claude details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/announcements",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
     {
       "id": "auto-anthropic-news-show-details-for-physicist-christopher-stubbs-joins-anthropic-s-long-term-b",
       "date": "2026-10-27",
@@ -55,21 +115,6 @@ const feedData = {
       "title": "Donating Agent Skills to the Agentic AI Foundation details",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/product",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-anthropic-files-s-1-with-the-sec-for-proposed-initial-public-offering-detai",
-      "date": "2026-10-27",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Anthropic files S-1 with the SEC for proposed initial public offering details",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/announcements",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
