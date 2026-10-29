@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-10-28T01:59:42.968Z",
-  "range": "2026-10-28 daily refresh",
+  "generatedAt": "2026-10-29T02:03:36.492Z",
+  "range": "2026-10-29 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -19,12 +19,57 @@ const feedData = {
   "items": [
     {
       "id": "auto-anthropic-news-show-details-for-expanding-our-partnership-with-gsa-to-bring-claude-to-all-",
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Expanding our partnership with GSA to bring Claude to all levels of government",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-show-details-for-ai-for-science-expands-to-foundations-and-research-institu",
+      "date": "2026-10-29",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for AI for Science expands to foundations and research institutions",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-expanding-our-partnership-with-gsa-to-bring-claude-to-all-levels-of-governm",
+      "date": "2026-10-29",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Expanding our partnership with GSA to bring Claude to all levels of government details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/partnerships",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-ai-for-science-expands-to-foundations-and-research-institutions-details-htt",
+      "date": "2026-10-29",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "AI for Science expands to foundations and research institutions details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/announcements",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
@@ -40,36 +85,6 @@ const feedData = {
       "title": "Show details for Anthropic files S-1 with the SEC for proposed initial public offering",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/s1-sec",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-expanding-our-partnership-with-gsa-to-bring-claude-to-all-levels-of-governm",
-      "date": "2026-10-28",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Expanding our partnership with GSA to bring Claude to all levels of government details",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/partnerships",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-early-progress-on-accelerating-drug-development-with-claude-details-https-w",
-      "date": "2026-10-28",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Early progress on accelerating drug development with Claude details",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/announcements",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
