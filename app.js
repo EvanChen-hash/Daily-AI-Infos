@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-10-30T02:21:37.266Z",
-  "range": "2026-10-30 daily refresh",
+  "generatedAt": "2026-10-31T01:57:34.369Z",
+  "range": "2026-10-31 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -19,7 +19,7 @@ const feedData = {
   "items": [
     {
       "id": "auto-anthropic-news-show-details-for-expanding-our-partnership-with-gsa-to-bring-claude-to-all-",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Expanding our partnership with GSA to bring Claude to all levels of government",
@@ -34,7 +34,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-show-details-for-ai-for-science-expands-to-foundations-and-research-institu",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for AI for Science expands to foundations and research institutions",
@@ -49,7 +49,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-expanding-our-partnership-with-gsa-to-bring-claude-to-all-levels-of-governm",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Expanding our partnership with GSA to bring Claude to all levels of government details",
@@ -64,7 +64,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-ai-for-science-expands-to-foundations-and-research-institutions-details-htt",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "category": "Official",
       "source": "Anthropic News",
       "title": "AI for Science expands to foundations and research institutions details",
