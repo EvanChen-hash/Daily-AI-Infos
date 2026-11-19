@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-11-18T03:59:49.709Z",
-  "range": "2026-11-18 daily refresh",
+  "generatedAt": "2026-11-19T03:56:47.914Z",
+  "range": "2026-11-19 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -18,8 +18,23 @@ const feedData = {
   },
   "items": [
     {
+      "id": "auto-anthropic-news-show-details-for-anthropic-prices-initial-public-offering-https-www-anthrop",
+      "date": "2026-11-19",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for Anthropic prices initial public offering",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
       "id": "auto-anthropic-news-show-details-for-anthropic-launches-roadshow-for-proposed-initial-public-of",
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Anthropic launches roadshow for proposed initial public offering",
@@ -34,12 +49,27 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-show-details-for-ai-for-science-expands-to-foundations-and-research-institu",
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for AI for Science expands to foundations and research institutions",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-anthropic-prices-initial-public-offering-details-https-www-anthropic-com-ne",
+      "date": "2026-11-19",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Anthropic prices initial public offering details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/announcements",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
@@ -55,21 +85,6 @@ const feedData = {
       "title": "Expanding our partnership with GSA to bring Claude to all levels of government details",
       "summary": "Official update detected from Anthropic News.",
       "url": "https://www.anthropic.com/news/partnerships",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-anthropic-launches-roadshow-for-proposed-initial-public-offering-details-ht",
-      "date": "2026-11-18",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Anthropic launches roadshow for proposed initial public offering details",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/announcements",
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "Anthropic",
