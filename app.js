@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-11-21T03:43:09.829Z",
-  "range": "2026-11-21 daily refresh",
+  "generatedAt": "2026-11-22T02:46:49.028Z",
+  "range": "2026-11-22 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -19,7 +19,7 @@ const feedData = {
   "items": [
     {
       "id": "auto-openai-news-medchembench-benchmarking-ai-for-medicinal-chemistry-https-openai-com-index-in",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "category": "Official",
       "source": "OpenAI News",
       "title": "MedChemBench: Benchmarking AI for medicinal chemistry",
@@ -34,7 +34,7 @@ const feedData = {
     },
     {
       "id": "auto-openai-news-intelligence-age-https-openai-com-news-intelligence-age",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "category": "Official",
       "source": "OpenAI News",
       "title": "Intelligence Age",
@@ -49,7 +49,7 @@ const feedData = {
     },
     {
       "id": "auto-openai-news-how-openai-s-performance-factory-keeps-chatgpt-fast-https-openai-com-index-how",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "category": "Official",
       "source": "OpenAI News",
       "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
@@ -64,7 +64,7 @@ const feedData = {
     },
     {
       "id": "auto-openai-news-global-affairs-https-openai-com-news-global-affairs",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "category": "Official",
       "source": "OpenAI News",
       "title": "Global Affairs",
@@ -79,7 +79,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-show-details-for-anthropic-prices-initial-public-offering-https-www-anthrop",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Anthropic prices initial public offering",
@@ -94,7 +94,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-show-details-for-anthropic-launches-roadshow-for-proposed-initial-public-of",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for Anthropic launches roadshow for proposed initial public offering",
@@ -109,7 +109,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-show-details-for-ai-for-science-expands-to-foundations-and-research-institu",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Show details for AI for Science expands to foundations and research institutions",
@@ -124,7 +124,7 @@ const feedData = {
     },
     {
       "id": "auto-anthropic-news-anthropic-prices-initial-public-offering-details-https-www-anthropic-com-ne",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "category": "Official",
       "source": "Anthropic News",
       "title": "Anthropic prices initial public offering details",
