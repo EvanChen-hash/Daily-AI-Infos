@@ -1,6 +1,6 @@
 const feedData = {
-  "generatedAt": "2026-11-24T06:42:06.874Z",
-  "range": "2026-11-24 daily refresh",
+  "generatedAt": "2026-11-25T05:11:46.171Z",
+  "range": "2026-11-25 daily refresh",
   "collector": {
     "skill": "last30days v3.3.2",
     "rawFile": "research/daily-ai-related-infos-tweets-official-announcements-short-videos-raw-dashboard.json",
@@ -17,6 +17,126 @@ const feedData = {
     ]
   },
   "items": [
+    {
+      "id": "auto-openai-news-searching-for-distant-planets-with-astra-https-openai-com-index-searching-for-",
+      "date": "2026-11-25",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "Searching for distant planets with Astra",
+      "summary": "Official update detected from OpenAI News.",
+      "url": "https://openai.com/index/searching-for-distant-planets-with-astra/",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "OpenAI",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-openai-news-intelligence-age-https-openai-com-news-intelligence-age",
+      "date": "2026-11-25",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "Intelligence Age",
+      "summary": "Official update detected from OpenAI News.",
+      "url": "https://openai.com/news/intelligence-age/",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "OpenAI",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-openai-news-gpt-6-models-demonstrate-intrinsic-protein-design-capabilities-https-openai-co",
+      "date": "2026-11-25",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "summary": "Official update detected from OpenAI News.",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "OpenAI",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-openai-news-global-affairs-https-openai-com-news-global-affairs",
+      "date": "2026-11-25",
+      "category": "Official",
+      "source": "OpenAI News",
+      "title": "Global Affairs",
+      "summary": "Official update detected from OpenAI News.",
+      "url": "https://openai.com/news/global-affairs/",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "OpenAI",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-show-details-for-anthropic-prices-initial-public-offering-https-www-anthrop",
+      "date": "2026-11-25",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for Anthropic prices initial public offering",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-show-details-for-anthropic-launches-roadshow-for-proposed-initial-public-of",
+      "date": "2026-11-25",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for Anthropic launches roadshow for proposed initial public offering",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/roadshow-launch",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-show-details-for-ai-for-science-expands-to-foundations-and-research-institu",
+      "date": "2026-11-25",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Show details for AI for Science expands to foundations and research institutions",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
+    {
+      "id": "auto-anthropic-news-anthropic-prices-initial-public-offering-details-https-www-anthropic-com-ne",
+      "date": "2026-11-25",
+      "category": "Official",
+      "source": "Anthropic News",
+      "title": "Anthropic prices initial public offering details",
+      "summary": "Official update detected from Anthropic News.",
+      "url": "https://www.anthropic.com/news/announcements",
+      "impact": "Daily official-source refresh item. Review source for full context.",
+      "tags": [
+        "Anthropic",
+        "official",
+        "daily refresh"
+      ]
+    },
     {
       "id": "auto-openai-news-perplexity-and-intelligence-https-openai-com-index-perplexity-and-intelligence",
       "date": "2026-11-24",
@@ -43,96 +163,6 @@ const feedData = {
       "impact": "Daily official-source refresh item. Review source for full context.",
       "tags": [
         "OpenAI",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-openai-news-intelligence-age-https-openai-com-news-intelligence-age",
-      "date": "2026-11-24",
-      "category": "Official",
-      "source": "OpenAI News",
-      "title": "Intelligence Age",
-      "summary": "Official update detected from OpenAI News.",
-      "url": "https://openai.com/news/intelligence-age/",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "OpenAI",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-openai-news-global-affairs-https-openai-com-news-global-affairs",
-      "date": "2026-11-24",
-      "category": "Official",
-      "source": "OpenAI News",
-      "title": "Global Affairs",
-      "summary": "Official update detected from OpenAI News.",
-      "url": "https://openai.com/news/global-affairs/",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "OpenAI",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-show-details-for-anthropic-prices-initial-public-offering-https-www-anthrop",
-      "date": "2026-11-24",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Show details for Anthropic prices initial public offering",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-show-details-for-anthropic-launches-roadshow-for-proposed-initial-public-of",
-      "date": "2026-11-24",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Show details for Anthropic launches roadshow for proposed initial public offering",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/roadshow-launch",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-show-details-for-ai-for-science-expands-to-foundations-and-research-institu",
-      "date": "2026-11-24",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Show details for AI for Science expands to foundations and research institutions",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
-        "official",
-        "daily refresh"
-      ]
-    },
-    {
-      "id": "auto-anthropic-news-anthropic-prices-initial-public-offering-details-https-www-anthropic-com-ne",
-      "date": "2026-11-24",
-      "category": "Official",
-      "source": "Anthropic News",
-      "title": "Anthropic prices initial public offering details",
-      "summary": "Official update detected from Anthropic News.",
-      "url": "https://www.anthropic.com/news/announcements",
-      "impact": "Daily official-source refresh item. Review source for full context.",
-      "tags": [
-        "Anthropic",
         "official",
         "daily refresh"
       ]
